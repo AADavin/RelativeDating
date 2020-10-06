@@ -11,16 +11,33 @@ In Gene transfers can date the tree of life, we showed (https://www.nature.com/a
 
 You will need to install the ete3 library to use most of the scripts
 
-*get_node_order.py*
+### get_node_order.py
 
-*Usage*: python get_node_order.py tree.nwk
-*Output*: Prints to stdoutput the node order of the given tree. For instance, using this tree:
+**Usage**: python get_node_order.py tree.nwk
+
+**Output**: Prints to stdoutput the node order of the given tree. For instance, using this tree:
 
 ![Tree 1](/Images/Tree1.png)
 
 Would produce:
 
 Root,a,b
+
+### count_orders.py
+
+**Usage**: python count_orders.py tree.nwk
+
+**Output**: Prints to stdoutput the number of possible node arrangements
+
+![Tree orders](/Images/TreeCountOrders.png)
+
+The number of total arrangements depends on the topology of the tree. In the figure, we see that a tree with 4 leaves and that particular topology has a total of 2 possible node arrangements (Root,a,b and Root,b,a). 
+
+
+
+
+
+
 
 
 
