@@ -9,8 +9,18 @@ In Gene transfers can date the tree of life, we showed (https://www.nature.com/a
 
 ## Scripts
 
+You will need to install the ete3 library to use most of the scripts
+
+*get_node_order.py*
+
+*Usage*: python get_node_order.py tree.nwk
+*Output*: Prints to stdoutput the node order of the given tree. For instance, using this tree:
+
 ![Tree 1](/Images/Tree1.png)
 
+Would produce:
+
+Root,a,b
 
 
 
