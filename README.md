@@ -33,6 +33,23 @@ Root,a,b
 
 The number of total arrangements depends on the topology of the tree. In the figure, we see that a tree with 4 leaves and that particular topology has a total of 2 possible node arrangements (Root,a,b and Root,b,a). 
 
+### generate_orders.py
+
+**Usage**: python generate_orders.py tree.nwk
+
+**Output**: Prints to stdoutput the trees, in newick format, of all possible node arrangements
+
+### ultrametrice.py 
+
+**Usage**: python ultrametrice.py tree.nwk order.txt
+
+The file order.txt must contain the name of the inner nodes of the tree.nwk in the format Root,node1,node2,node3
+
+**Output**: Prints to the stdouput an ultrametric tree where the inner nodes are ordered according to the file order.txt
+
+
+
+
 
 
 
