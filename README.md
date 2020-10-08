@@ -12,7 +12,7 @@ In Gene transfers can date the tree of life, we showed (https://www.nature.com/a
 
 ## Evolution and trees
 
-Evolution is most commonly represented using trees. These trees can be used to illustrate how different entities (cells, species, populations, genes, etc) diverge over time from a common ancestor. There has been a ton of discussion (sometimes quite heated) over the validity of using trees and not networks to represent evolution. I think the right answer is *it depends*. When we are dealing with entities that do "mix" or "recombine" over time (to a significant extent), a network (with a vertical component) is probably the *correct* representation.
+Evolution is most commonly represented using trees. These trees can be used to illustrate how different entities (cells, species, populations, genes, etc) diverge over time from a common ancestor. There has been a ton of discussion (sometimes quite heated) over the validity of using trees and not networks to represent evolution. My take on this is that when we are dealing with entities that do "mix" or "recombine" over time (to a significant extent), a network (with a vertical component) is the *correct* representation. However, that does not mean that using tree-based techniques we cannot obtain meaningful results
 
 In the case of prokaryotic evolution there are two different layers of evolution we have to study. The first one is the tree of species, that represents how different lineages of prokaryotic diverge over time. The second one is the tree of genes, that represent, for a given gene family (all sequences that share a common ancestor), how the gene has been evolving and *moving* inside the gene tree.
 
@@ -21,18 +21,25 @@ In the case of prokaryotic evolution there are two different layers of evolution
 There are several ways to infer LGT, but the most powerful one is called phylogenetic reconciliation.
 The (only) way to understand phylogenetic reconciliations is by having first a clear image of how cells evolve and genes evolve inside them
 
-For instance, in the picture we have a gene evolving a species tree with 4 species. There is a transfer event (indicated by the horizontal line), going from linage n1 to the ancestor lineage of n3 and n4.
+For instance, in the picture we have a gene evolving a species tree with 4 species. The species tree is represented by the wider tree (in black). The gene tree is inside the species tree. There is a transfer event (indicated by the horizontal line), going from linage n1 to the ancestor lineage of n3 and n4. The ancestor of n3 and n4 has two homologous copies of the gene after the transfer event (the second copy is represented in blue). 
 
+<p align="center">
+  <img src="/Images/Figure1.png">
+</p>
 
-![Figure 1](/Images/Figure1.png)
+If we had a magical crystal ball or a time machine we could see evolution happening with this level of detail, but sadly, we are not there yet. The best we have is the sequences in the genomes of the extant species (in the example: n1,n2,n3 and n4), that we can read and then infer the trees by using different phylogenetic techniques.
 
+The data that we can recover from the previous example would look like:
 
-
-## Inferring LGT
+<p align="center">
+  <img src="/Images/Figure2.png">
+</p>        
 
 LGT can be inferred using a set of techniques called *phylogenetic reconciliations*. 
 
+##
 
+##
 
 
 
@@ -76,17 +83,4 @@ The number of total arrangements depends on the topology of the tree. In the fig
 The file order.txt must contain the name of the inner nodes of the tree.nwk in the format Root,node1,node2,node3
 
 **Output**: Prints to the stdouput an ultrametric tree where the inner nodes are ordered according to the file order.txt
-
-
-
-
-
-
-
-
-
-
-
-
-
 
