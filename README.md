@@ -1,6 +1,8 @@
 # Relative Dating
 Copyright © 2020, Adrián A. Davín. Released under the MIT license.
 
+**NOT FINISHED YET**
+
 ## A very brief introduction
 
 We know very little about the history of life. Unfortunately, just a tiny fraction of all living beings that have ever lived on this planet have left a trace in the fossil record. The problem is especially acute in the case of prokaryotes, the most diverse and abundant life beings, for which just a handful of recognizable fossils have survived and carry very little information about their lifestyles.
@@ -35,11 +37,43 @@ The data that we can recover from the previous example would look like:
   <img src="/Images/Figure2.png">
 </p>        
 
-LGT can be inferred using a set of techniques called *phylogenetic reconciliations*. 
+The challenge is going from those two trees to something that tells us:
 
-##
+**There has been a transfer between the branch leading to n1 to the inmediate ancestor of n3 and n4**
 
-##
+The way we do that is using a technique called "phylogenetic reconciliation"
+
+## Phylogenetic reconciliations ##
+
+This is a relative old technique (first one published in 1970, include ref) that consist of mapping two trees. You can imagine this as the process of explainin the topology of one tree (the gene tree) based on the topology of a second tree (the species tree) and a series of events, such as dupplications, transfers and losses. There are many different algorithms, such as EcceTERA, ALE or RANGER-DTL.
+
+We are interested here only in the transfer events. Transfer events will be mapped on the species tree, such as:
+
+<p align="center">
+  <img src="/Images/Figure3.png">
+</p>
+
+Name of branches and nodes
+
+The exact moment of the transfer cannot be inferred with the current existing techniques.
+The best we can do is obtaining something like:
+
+n1 > b
+
+We don't know when the gene left n1, but it did at some point along the branch. We don't know when the gene arrived to b, but it occurs sometime along its extension
+
+## Transfer events carry relative information
+
+Assuming that we are correclty inferring the transfer in the correct species tree, we could say that those two lineages (the donor and the recipient of the transfer) had to coexist in the past.
+
+Right?
+
+Wrong. This assumes that the transfers occurs between those two lineages that are in the tree without any intermediates that might be not in the tree. Some of them could be unsampled species, some of them could even be extinct lineages. In fact, the gene could leave the donor much before than the gene is acquired by the recipient lineage.
+
+What we can say is that the donor lineage appeared in time before than the recipient lineage "disappear". In our example, the branch n1 appears with speciation a and the branch b disappears with speciation b 
+
+
+
 
 
 
