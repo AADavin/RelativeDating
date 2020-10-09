@@ -79,6 +79,10 @@ Right?
 
 Not so fast. This assumes that the transfers occurs between those two lineages that are in the tree without any intermediates that might be not in the tree. Some of them could be unsampled species, some of them could even be extinct lineages. In fact, the gene could leave the donor much before than the gene is acquired by the recipient lineage.
 
+<p align="center">
+  <img src="/Images/Figure4.png">
+</p>
+
 What we can say is that the donor lineage appeared in time before than the recipient lineage "disappear". In our example, the branch n1 appears with speciation a and the branch b disappears with speciation b 
 
 In other words:
@@ -94,7 +98,7 @@ node a is older than node b
 In relative dating we just try to order the speciation nodes of the tree. The total number of possible orders depends on the number of leaves and the topology of the tree. For intsance, a caterpillar tree has one possible order:
 
 <p align="center">
-  <img src="/Images/Figure4.png">
+  <img src="/Images/Figure5.png">
 </p> 
 
 The order is obviously Root,a,b
@@ -102,7 +106,7 @@ The order is obviously Root,a,b
 However, a tree with 4 species completely balanced (the other possible topology for 4 species), has two possible orders:
 
 <p align="center">
-  <img src="/Images/Figure5.png">
+  <img src="/Images/Figure6.png">
 </p>
 
 The number of possible orders grows **very** quickly. You can count the possible total orders of a tree using the script **count_orders.py**
@@ -127,13 +131,13 @@ We found that the best way to deal with this problem is selecting the maximum se
 Two transfers are time-compatible if they imply constraints that can be respected in the same tree:
 
 <p align="center">
-  <img src="/Images/Figure6.png">
+  <img src="/Images/Figure7.png">
 </p>
 
 Two transfers are not time-compatible when they imply constraints that can not be met by the same tree:
 
 <p align="center">
-  <img src="/Images/Figure7.png">
+  <img src="/Images/Figure8.png">
 </p>
 
 ## Filtering false transfers
@@ -141,7 +145,7 @@ Two transfers are not time-compatible when they imply constraints that can not b
 The problem of selecting the largest amount of time-compatible transfers is NP-complete, so we cannot guarantee, even for relatively small datasets, that we find the best possible solution. Luckily for us, there are some algorithm that can deal with this problem obtaining trees that are "good enough". The algorithm we used is based on dynamic programming and is called MaxTiC.
 
 <p align="center">
-  <img src="/Images/Figure8.png">
+  <img src="/Images/Figure9.png">
 </p>
 
 # MaxTiC
