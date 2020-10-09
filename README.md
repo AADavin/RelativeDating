@@ -89,7 +89,7 @@ Or event simpler:
 
 node a is older than node b
 
-## There are many ways to order a tree
+## There are many ways to order the speciations in a tree
 
 In relative dating we just try to order the speciation nodes of the tree. The total number of possible orders depends on the number of leaves and the topology of the tree. For intsance, a caterpillar tree has one possible order:
 
@@ -102,7 +102,7 @@ The order is obviously Root,a,b
 However, a tree with 4 species completely balanced (the other possible topology for 4 species), has two possible orders:
 
 <p align="center">
-  <img src="/Images/Figure4.png">
+  <img src="/Images/Figure5.png">
 </p>
 
 The number of possible orders grows **very** quickly. You can count the possible total orders of a tree using the script **count_orders.py**
@@ -139,6 +139,10 @@ Two transfers are not time-compatible when they imply constraints that can not b
 ## Filtering false transfers
 
 The problem of selecting the largest amount of time-compatible transfers is NP-complete, so we cannot guarantee, even for relatively small datasets, that we find the best possible solution. Luckily for us, there are some algorithm that can deal with this problem obtaining trees that are "good enough". The algorithm we used is based on dynamic programming and is called MaxTiC.
+
+<p align="center">
+  <img src="/Images/Figure8.png">
+</p>
 
 # MaxTiC
 
