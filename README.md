@@ -136,13 +136,13 @@ We found that the best way to deal with this problem is selecting the maximum se
 Two transfers are time-compatible if they imply constraints that can be respected in the same tree:
 
 <p align="center">
-  <img src="/Images/Figure7.png">
+  <img src="/Images/Figure8.png">
 </p>
 
 Two transfers are not time-compatible when they imply constraints that can not be met by the same tree:
 
 <p align="center">
-  <img src="/Images/Figure8.png">
+  <img src="/Images/Figure9.png">
 </p>
 
 ## Filtering false transfers
@@ -150,7 +150,7 @@ Two transfers are not time-compatible when they imply constraints that can not b
 The problem of selecting the largest amount of time-compatible transfers is NP-complete, so we cannot guarantee, even for relatively small datasets, that we find the best possible solution. Luckily for us, there are some algorithm that can deal with this problem obtaining trees that are "good enough". The algorithm we used is based on dynamic programming and is called MaxTiC.
 
 <p align="center">
-  <img src="/Images/Figure9.png">
+  <img src="/Images/Figure10.png">
 </p>
 
 # MaxTiC
