@@ -80,7 +80,7 @@ Right?
 Not so fast. This assumes that the transfers occurs between those two lineages that are in the tree without any intermediates that might be not in the tree. Some of them could be unsampled species, some of them could even be extinct lineages. In fact, the gene could leave the donor much before than the gene is acquired by the recipient lineage.
 
 <p align="center">
-  <img src="/Images/Figure4.png">
+  <img width = 400, src="/Images/Figure4.png">
 </p>
 
 What we can say is that the donor lineage appeared in time before than the recipient lineage "disappear". In our example, the branch n1 appears with speciation a and the branch b disappears with speciation b 
