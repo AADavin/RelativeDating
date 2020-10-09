@@ -120,6 +120,11 @@ In prokaryotes, there are normally many transfer events, some more recent, some 
 ## Some transfers carry not information
 
 Transfers arriving to the leaves do not carry time information, because leaves have no descendant nodes.
+
+<p align="center">
+  <img src="/Images/Figure7.png">
+</p>
+
 Transfers from ancestors to descendants carry not information, because the constraint that they imply is always forced by the topology of the tree (it is possible in theory to have a tree going from an ancestor to a descendant, think of a gene that leaves the tree in time 1, evolves outside a different lineage and then comes back to a descendant of the original donor)
 
 ## Some transfers can be falsely inferred
