@@ -3,6 +3,12 @@ Copyright © 2020, Adrián A. Davín. Released under the MIT license.
 
 **NOT FINISHED YET**
 
+## Relative dating
+
+This GitHub repository contains a gentle introduction to relative dating with lateral gene transfer and some scripts that might be useful to those interested in performing their own analyses.
+
+I have felt frustated many times in the past when I tried to understand some relatively hard concepts without being a specialist for not being able to find enough material covering the topic.   
+
 ## A very brief introduction
 
 We know very little about the history of life. Unfortunately, just a tiny fraction of all living beings that have ever lived on this planet have left a trace in the fossil record. The problem is especially acute in the case of prokaryotes, the most diverse and abundant life beings, for which just a handful of recognizable fossils have survived and carry very little information about their lifestyles.
@@ -68,15 +74,69 @@ Assuming that we are correclty inferring the transfer in the correct species tre
 
 Right?
 
-Wrong. This assumes that the transfers occurs between those two lineages that are in the tree without any intermediates that might be not in the tree. Some of them could be unsampled species, some of them could even be extinct lineages. In fact, the gene could leave the donor much before than the gene is acquired by the recipient lineage.
+Not so fast. This assumes that the transfers occurs between those two lineages that are in the tree without any intermediates that might be not in the tree. Some of them could be unsampled species, some of them could even be extinct lineages. In fact, the gene could leave the donor much before than the gene is acquired by the recipient lineage.
 
 What we can say is that the donor lineage appeared in time before than the recipient lineage "disappear". In our example, the branch n1 appears with speciation a and the branch b disappears with speciation b 
 
+In other words:
 
+**The parent node of the donor of a transfer must be older than the descendant node of the recipient**
 
+Or event simpler:
 
+node a is older than node b
 
+## There are many ways to order a tree
 
+In relative dating we just try to order the speciation nodes of the tree. The total number of possible orders depends on the number of leaves and the topology of the tree. For intsance, a caterpillar tree has one possible order:
+
+<p align="center">
+  <img src="/Images/Figure5.png">
+</p> 
+
+The order is obviously Root,a,b
+
+However, a tree with 4 species completely balanced (the other possible topology for 4 species), has two possible orders:
+
+<p align="center">
+  <img src="/Images/Figure6.png">
+</p>
+
+The number of possible orders grows **very** quickly. You can count the possible total orders of a tree using the script **count_orders.py**
+
+## There are many transfers
+
+A single transfer only constraints two nodes. This affects obviously at all the ancestor nodes of the donor, that will be older than all the descendants nodes of the recipients. 
+
+In prokaryotes, there are normally many transfer events, some more recent, some older. If we are able to infer many transfers, we might not be able to obtain the right order of every speciation event, but we can constraint the position to a potentially narrow interval 
+
+## Some transfers carry not information
+
+Transfers arriving to the leaves do not carry time information, because leaves have no descendant nodes.
+Transfers from ancestors to descendants carry not information, because the constraint that they imply is always forced by the topology of the tree (it is possible in theory to have a tree going from an ancestor to a descendant, think of a gene that leaves the tree in time 1, evolves outside a different lineage and then comes back to a descendant of the original donor)
+
+## Some transfers can be falsely inferred
+
+If the inference was perfect this would not be a concern, but it is not. Sometimes we detect transfers that are not correct: maybe the direction of the transfer is wrong, maybe the donor or the recipient are not the correct ones. This means that some transfers might imply constraints in the tree that are false, and some of them might be even contradictory (for instance, a transfer implies a older than b, and a second transfer implies than b is older than a)
+
+We found that the best way to deal with this problem is selecting the maximum set of time-compatible transfers.
+
+Two transfers are time-compatible if they imply constraints that can be respected in the same tree:
+
+Two transfers are not time-compatible when they imply constraints that can not be met by the same tree:
+
+## Filtering false transfers
+
+The problem of selecting the largest amount of time-compatible transfers is NP-complete, so we cannot guarantee, even for relatively small datasets, that we find the best possible solution. Luckily for us, there are some algorithm that can deal with this problem obtaining trees that are "good enough". The algorithm we used is based on dynamic programming and is called MaxTiC.
+
+# MaxTiC
+
+# Sampler
+
+## Generating uncertainty
+
+Once we have the MaxTiC set, we can use those transfers to constraint a tree.
+There will be, most likely, some of the nodes that are not constrained,with some room to wiggle.
 
 ## Scripts
 
