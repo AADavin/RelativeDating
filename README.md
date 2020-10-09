@@ -7,8 +7,6 @@ Copyright © 2020, Adrián A. Davín. Released under the MIT license.
 
 This GitHub repository contains a gentle introduction to relative dating with lateral gene transfer and some scripts that might be useful to those interested in performing their own analyses.
 
-I have felt frustated many times in the past when I tried to understand some relatively hard concepts without being a specialist for not being able to find enough material covering the topic.   
-
 ## A very brief introduction
 
 We know very little about the history of life. Unfortunately, just a tiny fraction of all living beings that have ever lived on this planet have left a trace in the fossil record. The problem is especially acute in the case of prokaryotes, the most diverse and abundant life beings, for which just a handful of recognizable fossils have survived and carry very little information about their lifestyles.
@@ -59,12 +57,17 @@ We are interested here only in the transfer events. Transfer events will be mapp
   <img src="/Images/Figure3.png">
 </p>
 
-Name of branches and nodes
+n1,n2,n3,n4 are the name of the leaves (i.e the extant species), and the inner nodes (Root, a, b) correspond to speciation events.
+In phylogenetics we refer to the different branches of the tree by the name of the final node, e.g n1 is both the extant organism and the branch leading to n1. It should be obvious by the context when I am referring to the speciation node or to the branch, but I will be as explicit as possible to avoid confusion. 
 
 The exact moment of the transfer cannot be inferred with the current existing techniques.
 The best we can do is obtaining something like:
 
-n1 > b
+**There was a transfer from the branch n1 to branch b**
+
+Or
+
+n1 --> b
 
 We don't know when the gene left n1, but it did at some point along the branch. We don't know when the gene arrived to b, but it occurs sometime along its extension
 
@@ -91,7 +94,7 @@ node a is older than node b
 In relative dating we just try to order the speciation nodes of the tree. The total number of possible orders depends on the number of leaves and the topology of the tree. For intsance, a caterpillar tree has one possible order:
 
 <p align="center">
-  <img src="/Images/Figure5.png">
+  <img src="/Images/Figure4.png">
 </p> 
 
 The order is obviously Root,a,b
@@ -99,7 +102,7 @@ The order is obviously Root,a,b
 However, a tree with 4 species completely balanced (the other possible topology for 4 species), has two possible orders:
 
 <p align="center">
-  <img src="/Images/Figure6.png">
+  <img src="/Images/Figure4.png">
 </p>
 
 The number of possible orders grows **very** quickly. You can count the possible total orders of a tree using the script **count_orders.py**
@@ -123,7 +126,15 @@ We found that the best way to deal with this problem is selecting the maximum se
 
 Two transfers are time-compatible if they imply constraints that can be respected in the same tree:
 
+<p align="center">
+  <img src="/Images/Figure6.png">
+</p>
+
 Two transfers are not time-compatible when they imply constraints that can not be met by the same tree:
+
+<p align="center">
+  <img src="/Images/Figure7.png">
+</p>
 
 ## Filtering false transfers
 
