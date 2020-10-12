@@ -54,7 +54,7 @@ This is a relative old technique (first one published in 1970, include ref) that
 We are interested here only in the transfer events. Transfer events will be mapped on the species tree, such as:
 
 <p align="center">
-  <img src="/Images/Figure3.png">
+  <img src="/Images/Asset26.png">
 </p>
 
 n1,n2,n3,n4 are the name of the leaves (i.e the extant species), and the inner nodes (Root, a, b) correspond to speciation events.
