@@ -1,7 +1,7 @@
 # Relative Dating
 Copyright © 2020, Adrián A. Davín. Released under the MIT license.
 
-**NOT FINISHED YET**
+# UNDER CONSTRUCTION
 
 ## Relative dating
 
@@ -14,7 +14,7 @@ Luckily for us, we do have access to the genomes of living organisms and by anal
 
 In prokaryotes, the process of Lateral Gene Transfers (also known as Horizontal Gene Transfers, LGT or HGT for short) consist on cells incoroporting in their own genomes fragments of genomic material from different cells. These events can be inferred by studying the genomes of their descendants and carry a very valuable information: a LGT beween two organisms tells us that those cells coexisted in the past. 
 
-In Gene transfers can date the tree of life, we showed (https://www.nature.com/articles/s41559-018-0525-3) how we can detect transfers and how they carry time information. In this GitHub repository you can find some scripts and tools useful to perform a relative dating analysis
+In Gene transfers can date the tree of life, we [showed](https://www.nature.com/articles/s41559-018-0525-3) how we can detect transfers and how they carry time information. In this GitHub repository you can find some scripts and tools useful to perform a relative dating analysis
 
 ## Evolution and trees
 
@@ -54,7 +54,7 @@ This is a relative old technique (first one published in 1970, include ref) that
 We are interested here only in the transfer events. Transfer events will be mapped on the species tree, such as:
 
 <p align="center">
-  <img src="/Images/Asset26.png">
+  <img src="/Images/Figure3.png">
 </p>
 
 n1,n2,n3,n4 are the name of the leaves (i.e the extant species), and the inner nodes (Root, a, b) correspond to speciation events.
@@ -64,6 +64,10 @@ The exact moment of the transfer cannot be inferred with the current existing te
 The best we can do is obtaining something like:
 
 **There was a transfer from the branch n1 to branch b**
+
+<p align="center">
+  <img src="/Images/Figure4.png">
+</p>
 
 Or
 
@@ -80,7 +84,7 @@ Right?
 Not so fast. This assumes that the transfers occurs between those two lineages that are in the tree without any intermediates that might be not in the tree. Some of them could be unsampled species, some of them could even be extinct lineages. In fact, the gene could leave the donor much before than the gene is acquired by the recipient lineage.
 
 <p align="center">
-  <img width = 400, src="/Images/Figure4.png">
+  <img width = 400, src="/Images/Figure5.png">
 </p>
 
 What we can say is that the donor lineage appeared in time before than the recipient lineage "disappear". In our example, the branch n1 appears with speciation a and the branch b disappears with speciation b 
