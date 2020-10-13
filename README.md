@@ -84,7 +84,15 @@ Right?
 Not so fast. This assumes that the transfers occurs between those two lineages that are in the tree without any intermediates that might be not in the tree. Some of them could be unsampled species, some of them could even be extinct lineages. In fact, the gene could leave the donor much before than the gene is acquired by the recipient lineage.
 
 <p align="center">
-  <img width = 400, src="/Images/Figure5.png">
+  <img src="/Images/Figure5.png">
+</p>
+
+<p align="center">
+  <img src="/Images/Figure6.png">
+</p>
+
+<p align="center">
+  <img src="/Images/Figure7.png">
 </p>
 
 What we can say is that the donor lineage appeared in time before than the recipient lineage "disappear". In our example, the branch n1 appears with speciation a and the branch b disappears with speciation b 
@@ -97,12 +105,15 @@ Or event simpler:
 
 node a is older than node b
 
+
+
+
 ## There are many ways to order the speciations in a tree
 
 In relative dating we just try to order the speciation nodes of the tree. The total number of possible orders depends on the number of leaves and the topology of the tree. For intsance, a caterpillar tree has one possible order:
 
 <p align="center">
-  <img src="/Images/Figure5.png">
+  <img src="/Images/Figure8.png">
 </p> 
 
 The order is obviously Root,a,b
@@ -110,7 +121,7 @@ The order is obviously Root,a,b
 However, a tree with 4 species completely balanced (the other possible topology for 4 species), has two possible orders:
 
 <p align="center">
-  <img src="/Images/Figure6.png">
+  <img src="/Images/Figure9.png">
 </p>
 
 The number of possible orders grows **very** quickly. You can count the possible total orders of a tree using the script **count_orders.py**
