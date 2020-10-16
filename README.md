@@ -58,7 +58,7 @@ Not so fast. This assumes that the transfers occur between those two lineages th
 We can see that very clearly in the next example, that represents the full evolutionary history of a group of organisms of which one of them goes extinct (n9)
  
 <p align="center">
-  <img widht=400 src="/Images/Figure5.png">
+  <img src="/Images/Figure5.png">
 </p>
 
  
@@ -69,7 +69,7 @@ We do not retrieve the genome of n9 in the past, and the species tree + the tran
 
 The branches b and c from the figure where we can see n9 going extinct are collapse into one. In the reconciliation analysis, we effectively see the transfer leaving the branch b+c. But, **b+c are not contemporary to a**:
 <p align="center">
-  <img widht=400 src="/Images/Figure7.png">
+  <img src="/Images/Figure7.png">
 </p>
 
 What we can say just by looking at the reconciliation is that the donor lineage appeared before the recipient lineage "disappeared". In our example, the branch **b+c** appears with speciation **d** and the branch **a** disappears with speciation **a**.
@@ -197,9 +197,7 @@ MaxTiC will generate different files:
 1. Compute reconciliations using ALEml_undated. Store all the uTs files in the same folder
 2. Parse all the transfers and put them on the same file:
     python parse_transfers.py folder_with_uTs > AllTransfers.tsv
- 
-You need the species tree in a file. The species tree must have its inner nodes named  using the same way that ALE does. The easiest way is just take a random reconciliation (the uml_rec file), and get the tree from there. A short command to that is:
-head -3 your_reconciliation.ale.uml_rec | tail -1 | cut -f 2 > RefTree.nwk
+You need the species tree in a file. The species tree must have its inner nodes named  using the same way that ALE does. The easiest way is just take a random reconciliation (the uml_rec file), and get the tree from there. A short command to that is: head -3 your_reconciliation.ale.uml_rec | tail -1 | cut -f 2 > RefTree.nwk
 3. Bootstrap the transfers: This script automatically filters transfers smaller than 0.05 and converts the transfers to constraints
 python bootstrap_transfers.py AllTransfers.tsv RefTree.nwk 100
 4. Get the commands to run maxtic
