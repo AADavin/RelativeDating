@@ -1,8 +1,6 @@
 # Relative Dating
 Copyright © 2020, Adrián A. Davín. Released under the MIT license.
 
-## Relative dating
-***
 This GitHub repository contains a gentle introduction to relative dating with Lateral Gene Transfer and some scripts that might be useful to those interested in performing their own analyses. It assumes a very basic understanding of phylogenetics (i.e. what is a gene tree).
 ## A very brief introduction
 ***
@@ -262,14 +260,14 @@ Family  Donor  Recipient  Weight
 The weight is the posterior probability of the transfer inferred by ALE undated
 #### prepare_maxtic_commands.py
 
-Usage: python prepare_maxtic_commands.py folder_with_the_replicates RefTree.nwk
+**Usage**: python prepare_maxtic_commands.py folder_with_the_replicates RefTree.nwk
  
-Output: It prints the commands that you can use then to run MaxTiC. 
+**Output**: It prints the commands that you can use then to run MaxTiC. 
 #### ultrametrice.py
-Usage: python ultrametrice.py tree.nwk order.txt
+**Usage: python ultrametrice.py tree.nwk order.txt
 The file order.txt must contain the name of the inner nodes of the tree.nwk in the format Root,node1,node2,node3
  
-Output: Prints to the stdouput an ultrametric tree where the inner nodes are ordered according to the file order.txt
+**Output**: Prints to the stdouput an ultrametric tree where the inner nodes are ordered according to the file order.txt
  
 
 
