@@ -58,7 +58,7 @@ Not so fast. This assumes that the transfers occur between those two lineages th
 We can see that very clearly in the next example, that represents the full evolutionary history of a group of organisms of which one of them goes extinct (n9)
  
 <p align="center">
-  <img widht=500 src="/Images/Figure5.png">
+  <img widht=400 src="/Images/Figure5.png">
 </p>
 
  
@@ -69,7 +69,7 @@ We do not retrieve the genome of n9 in the past, and the species tree + the tran
 
 The branches b and c from the figure where we can see n9 going extinct are collapse into one. In the reconciliation analysis, we effectively see the transfer leaving the branch b+c. But, **b+c are not contemporary to a**:
 <p align="center">
-  <img widht=500 src="/Images/Figure7.png">
+  <img widht=400 src="/Images/Figure7.png">
 </p>
 
 What we can say just by looking at the reconciliation is that the donor lineage appeared before the recipient lineage "disappeared". In our example, the branch **b+c** appears with speciation **d** and the branch **a** disappears with speciation **a**.
