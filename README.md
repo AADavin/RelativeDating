@@ -58,7 +58,7 @@ Not so fast. This assumes that the transfers occur between those two lineages th
 We can see that very clearly in the next example, that represents the full evolutionary history of a group of organisms of which one of them goes extinct (n9)
  
 <p align="center">
-  <img src="/Images/Figure5.png">
+  <img width="500" src="/Images/Figure5.png">
 </p>
 
  
@@ -69,7 +69,7 @@ We do not retrieve the genome of n9 in the past, and the species tree + the tran
 
 The branches b and c from the figure where we can see n9 going extinct are collapse into one. In the reconciliation analysis, we effectively see the transfer leaving the branch b+c. But, **b+c are not contemporary to a**:
 <p align="center">
-  <img src="/Images/Figure7.png">
+  <img width="500" src="/Images/Figure7.png">
 </p>
 
 What we can say just by looking at the reconciliation is that the donor lineage appeared before the recipient lineage "disappeared". In our example, the branch **b+c** appears with speciation **d** and the branch **a** disappears with speciation **a**.
@@ -197,20 +197,20 @@ MaxTiC will generate different files:
 1. Compute reconciliations using ALEml_undated. Store all the uTs files in the same folder
 2. Parse all the transfers and put them on the same file:
     python parse_transfers.py folder_with_uTs > AllTransfers.tsv
-You need the species tree in a file. The species tree must have its inner nodes named  using the same way that ALE does. The easiest way is just take a random reconciliation (the uml_rec file), and get the tree from there. A short command to that is: head -3 your_reconciliation.ale.uml_rec | tail -1 | cut -f 2 > RefTree.nwk
-3. Bootstrap the transfers: This script automatically filters transfers smaller than 0.05 and converts the transfers to constraints
+3.You need the species tree in a file. The species tree must have its inner nodes named  using the same way that ALE does. The easiest way is just take a random reconciliation (the uml_rec file), and get the tree from there. A short command to that is: head -3 your_reconciliation.ale.uml_rec | tail -1 | cut -f 2 > RefTree.nwk
+4. Bootstrap the transfers: This script automatically filters transfers smaller than 0.05 and converts the transfers to constraints
 python bootstrap_transfers.py AllTransfers.tsv RefTree.nwk 100
-4. Get the commands to run maxtic
+5. Get the commands to run maxtic
 python prepare_maxtic_commands.py folder_with_the_replicates RefTree.nwk > coms
-5. Run MaxTiC, once for each Replicate
+6. Run MaxTiC, once for each Replicate
 parallel -j n_of_threads < coms 
-6. Parse the bootstrapped result
+7. Parse the bootstrapped result
 python read_bootstrap.py ./ > ResultsBootstrap.tsv
-7. Get those that appear in at least 95 of the replicates:
+8. Get those that appear in at least 95 of the replicates:
 awk -F "\t" '$3 >= 95 {print $1,$2,$3}' OFS="\t"  ResultsBootstrap.tsv > HighSupportConstraints.tsv
-8. Run MaxTiC on those constraints
+9. Run MaxTiC on those constraints
 python MaxTiC.py RefTree.nwk HighSupportConstraints.tsv Global
-9. Run the order explorer with a very low temperature (use the MaxTiC tree as the departure point!):
+10. Run the order explorer with a very low temperature (use the MaxTiC tree as the departure point!):
 python order_explorer.py -tree Global_MaxTiCTree.nwk -constraints HighSupportConstraints.tsv -T 0.00000000000000000000000000001 -f 1000 -o Orders
 By default order_explorer runs 10^6 cycles. You can sample every 1000th cycle (-f option) to get 1000 node orders compatible with the constraints.
 ## Scripts
