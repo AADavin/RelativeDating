@@ -78,7 +78,7 @@ The simplest way to put that is:
  
 Or even simpler:
  
-> node a is older than node b
+> node d is older than node a
  
 ## There are many ways to order the speciations in a tree
 ***
