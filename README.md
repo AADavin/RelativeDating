@@ -49,8 +49,10 @@ The exact moment of the transfer cannot be inferred with the currently existing 
 Or
 n1 --> b
 We don't know when the gene left n1, but it did at some point along the branch. We don't know when the gene arrived to b, but it occurs sometime across the length of the branch
+
 ## Transfers can be transformed into constraints
 ***
+
 Assuming that we are correctly inferring the transfer in the correct species tree, we could say that those two lineages (the donor and the recipient of the transfer) had to coexist in the past.
 Right?
 Not so fast. This assumes that the transfers occur between those two lineages that are in the tree without any intermediates that might be not in the tree. Some of them could be unsampled species, some of them could even be extinct lineages. In fact, the gene could leave the donor much before the gene is acquired by the recipient lineage.
