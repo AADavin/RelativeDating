@@ -1,7 +1,8 @@
 # Relative Dating
 Copyright © 2020, Adrián A. Davín. Released under the MIT license.
 
-This GitHub repository contains a gentle introduction to relative dating with Lateral Gene Transfer and some scripts that might be useful to those interested in performing their own analyses. It assumes a very basic understanding of phylogenetics (i.e. what is a gene tree).
+This GitHub repository contains a gentle introduction to relative dating with Lateral Gene Transfer and some scripts that might be useful to those interested in performing their own analyses.
+
 ## A very brief introduction
 ***
 
@@ -11,11 +12,9 @@ Luckily for us, we can access now the information contained in the genomes of ex
 
 If you want a more detailed description of the process you can read our paper on relative dating [here](https://www.nature.com/articles/s41559-018-0525-3)
 
-
 ## How do we know that a gene has been transferred in the past?
-There are several ways to infer LGT, but the most powerful one is called phylogenetic reconciliation. The (only) way to understand phylogenetic reconciliations is by having first a clear image of how cells evolve and genes evolve inside them
-It is good to begin by having a clear picture on how the process we are studying affect 
-For instance, in the picture we have a gene evolving a species tree with 4 species. The species tree is represented by the wider tree (in black). The gene tree is inside the species tree. n1,n2,n3,n4 are the name of the leaves (i.e the extant species), and the inner nodes (Root, a, b) correspond to speciation events. In phylogenetics we refer to the different branches of the tree by the name of the final node, e.g n1 is both the extant organism and the branch leading to n1. It should be obvious by the context when I am referring to the speciation node or to the branch, but I will be as explicit as possible to avoid confusion.
+
+There are several ways to infer LGT, but the most powerful one is called **phylogenetic reconciliation**. The easiest way to understand reconciliations is picturing trees evolving inside trees. The outer tree represents the species tree, and the inner tree the gene tree. For instance, in the picture we have a gene evolving a species tree with 4 species. The species tree is represented by the wider tree (in black). The gene tree is inside the species tree. n1,n2,n3,n4 are the name of the leaves (i.e the extant species), and the inner nodes (Root, a, b) correspond to speciation events. In phylogenetics we refer to the different branches of the tree by the name of the final node, e.g n1 is both the extant organism and the branch leading to n1. It should be obvious by the context when I am referring to the speciation node or to the branch, but I will be as explicit as possible to avoid confusion.
 There is a transfer event (indicated by the horizontal line), going from the branch n1 to the ancestor lineage of n3 and n4. The ancestor of n3 and n4 has two homologous copies of the gene after the transfer event (the second copy is represented in blue).
  
 <p align="center">
@@ -32,11 +31,12 @@ The data that we can recover from the previous example would look like:
 
 The challenge is going from those two trees to something that tells us:
 There has been a transfer between the branch leading to n1 to the immediate ancestor of n3 and n4
-The way we do that is using a technique called "phylogenetic reconciliation"
+
 ## Phylogenetic reconciliations
 ***
 This is a relatively old technique ([the first one published in 1979](https://www.jstor.org/stable/2412519?seq=1#metadata_info_tab_contents)) that consist of mapping two trees. You can imagine this as the process of explaining the topology of one tree (the gene tree) based on the topology of a second tree (the species tree) and a series of events, such as duplications, transfers and losses. 
 In a reconciliation, transfer events will be mapped on the species tree, such as:
+
 <p align="center">
   <img src="/Images/Figure3.png">
 </p>
@@ -167,7 +167,7 @@ The way that order_sampler work is by taking a node at a time, and then moving i
 
 In the figure, we see how the order_sampler took the node c (the last speciation on the left) and made it a few steps older. 
 
-Running this algorithm for many steps effectively mixes the speciation ranking and produces a distribution of ranked trees. The algorithm has a temperature component, that can be used to explore order that might be potentially conflicting with the given constraints imposed by MaxTiC. Setting a very low temperature will prevent this from happening.
+Running this algorithm for many steps effectively mixes the speciation ranking and produces a distribution of ranked trees. The algorithm has a temperature component, that can be used to explore orders that might be potentially conflicting with the given constraints imposed by MaxTiC. Setting a very low temperature will prevent this from happening.
 
 ## Pipeline
 ***
