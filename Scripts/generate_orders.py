@@ -160,7 +160,7 @@ if __name__ == "__main__":
     scr,mytree_file = sys.argv
 
     with open(mytree_file) as f:
-        mytree = ete3.PhyloTree(f.next().strip(), format=1)
+        mytree = ete3.Tree(f.readline().strip(), format=1)
 
     all_partitions = write_partitions(mytree)
     generate_node_orders(all_partitions)

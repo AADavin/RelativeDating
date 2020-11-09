@@ -245,7 +245,6 @@ def order_explorer(tree_file, constraints_file, n_cycles, T, freq, stopping, ann
 
     print("### Node ranking explorer ### ")
     print("Total weight of constraints is %s" % str(total_w))
-    print("Orders will be saved in %s" % orders_file)
     print("Log will be saved in %s" % log_file)
     print("Best Tree will be saved in %s" % best_tree)
     print("Running %s cycles. Sampling 1 out of %s trees" % (n_cycles,freq))
