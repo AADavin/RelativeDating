@@ -1,15 +1,15 @@
 import sys
 import os
 
-def read_bootstrap(path):
+def read_incompatible(path):
 
-    replicate_files = [x for x in os.listdir(path) if "MaxTiC_Constraints" in x] #
+    replicate_files = [x for x in os.listdir(path) if "conflicting_with" in x]
     number_files = len(replicate_files)
     constraints = dict()
     for replicate_file in replicate_files:
         with open(path + "/" + replicate_file) as f:
             for line in f:
-                dn, rc, wt = line.strip().split("\t")
+                dn, rc, wt = line.strip().replace(" ",",").split(",")
                 if dn not in constraints:
                     constraints[dn] = dict()
                 if rc not in constraints[dn]:
@@ -25,8 +25,9 @@ def read_bootstrap(path):
 if __name__ == "__main__":
 
     if len(sys.argv) != 2:
-        print("usage: python read_bootstrap.py path")
+        print("usage: python read_incompatible.py path")
         exit(0)
 
     scr, path = sys.argv
-    read_bootstrap(path)
+    read_incompatible(path)
+
